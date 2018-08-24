@@ -9,7 +9,8 @@ class TestArtist < MiniTest::Test
        "first_name" => "Joan",
        "last_name" => "Miró",
        "bio" => "20 April 1893 – 25 December 1983. Spanish painter, sculptor, and ceramicist born in Barcelona.",
-       "style" => "Surrealism"}
+       "style" => "Surrealism",
+       "gallery_id" => 1}
     @artist = Artist.new(info)
   end
 
@@ -31,6 +32,11 @@ class TestArtist < MiniTest::Test
   def test_artist_has_bio
     result = @artist.bio()
     assert_equal("20 April 1893 – 25 December 1983. Spanish painter, sculptor, and ceramicist born in Barcelona.", result)
+  end
+
+  def test_artist_gallery
+    result = @artist.gallery_id()
+    assert_equal(1, result)
   end
 
   def test_artist_full_name
