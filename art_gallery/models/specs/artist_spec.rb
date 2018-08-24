@@ -23,19 +23,20 @@ class TestArtist < MiniTest::Test
     assert_equal("Miró", result)
   end
 
-  def test_artist_has_bio
-    result = @artist.bio()
-    assert_equal("20 April 1893 – 25 December 1983. Spanish painter, sculptor, and ceramicist born in Barcelona.", result)
-  end
-
   def test_artist_has_style
     result = @artist.style()
     assert_equal("Surrealism", result)
+  end
+
+  def test_artist_has_bio
+    result = @artist.bio()
+    assert_equal("20 April 1893 – 25 December 1983. Spanish painter, sculptor, and ceramicist born in Barcelona.", result)
   end
 
   def test_artist_full_name
     result = @artist.full_name()
     assert_equal("Joan Miró", result)
   end
+
 
 end

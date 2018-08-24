@@ -1,11 +1,12 @@
 DROP TABLE exhibits;
-DROP TABLE galleries;
 DROP TABLE artists;
+DROP TABLE galleries;
 
 
-CREATE TABLE galleries(
+CREATE TABLE galleries
+(
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255) not null,
+  name VARCHAR(255) not null
 );
 
 CREATE TABLE artists(
