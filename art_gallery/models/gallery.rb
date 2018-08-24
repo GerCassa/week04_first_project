@@ -9,4 +9,15 @@ class Gallery
     @name = info["name"]
   end
 
+  def save()
+    sql = "INSERT INTO galleries
+      (name)
+      VALUES
+      ($1)
+      RETURNING *"
+      values = [@name]
+      artist_info = SqlRunner.run(sql, values)
+      @id = artist_info.first()["id"].to_i
+  end
+
 end

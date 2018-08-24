@@ -13,8 +13,8 @@ CREATE TABLE artists(
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255) not null,
   last_name VARCHAR(255) not null,
-  bio TEXT,
   style VARCHAR(255),
+  bio TEXT,
   gallery_id INT8 references galleries(id)
 );
 
