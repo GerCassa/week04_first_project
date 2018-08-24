@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Artist
 
-  attr_reader :id, :first_name, :last_name, :bio, :style, :gallery_id
+  attr_reader :id
+  attr_accessor :first_name, :last_name, :bio, :style, :gallery_id
 
   def initialize(info)
     @id = info["id"].to_i
