@@ -46,17 +46,37 @@ class Artist
     SqlRunner.run(sql, values)
   end
 
+  def delete()
+
+  end
+
   def self.all()
     sql = "SELECT * FROM artists"
     artists = SqlRunner.run(sql)
-    result = artists.map {|artist| Artists.new(artist)}
+    result = artists.map {|artist| Artist.new(artist)}
     return result
   end
 
   def self.find( id )
     sql = "SELECT * FROM artists WHERE id = $1"
     values = [id]
-    artist = SqlRunner.run (sql, values)
+    artist = SqlRunner.run( sql, values )
+    result = Artist.new( artist.first )
+    return result
+  end
+
+  def self.find_first_name( first_name )
+    sql = "SELECT * FROM artists WHERE first_name = $1"
+    values = [first_name]
+    artist = SqlRunner.run(sql, values)
+    result = Artist.new(artist.first)
+    return result
+  end
+
+  def self.find_last_name( last_name )
+    sql = "SELECT * FROM artists WHERE last_name = $1"
+    values = [last_name]
+    artist = SqlRunner.run(sql, values)
     result = Artist.new(artist.first)
     return result
   end
