@@ -28,4 +28,9 @@ class TestArtist < MiniTest::Test
     assert_equal("20 April 1893 – 25 December 1983. Spanish painter, sculptor, and ceramicist born in Barcelona.", result)
   end
 
+  def test_artist_has_style
+    result = @artist.style()
+    assert_equal("Surrealism", result)
+  end
+
 end
