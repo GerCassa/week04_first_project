@@ -33,4 +33,9 @@ class TestArtist < MiniTest::Test
     assert_equal("Surrealism", result)
   end
 
+  def test_artist_full_name
+    result = @artist.full_name()
+    assert_equal("Joan Miró", result)
+  end
+
 end
