@@ -18,4 +18,9 @@ class TestArtist < MiniTest::Test
     assert_equal("Joan", result)
   end
 
+  def test_artist_has_last_name
+    result = @artist.last_name()
+    assert_equal("Miró", result)
+  end
+
 end
