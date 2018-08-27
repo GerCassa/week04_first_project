@@ -14,6 +14,14 @@ get '/artists' do
 end
 
 # add new artists
+get '/artists/new' do
+  erb(:"artists/new")
+end
 
+post '/artists' do
+  @artist = Artist.new(params)
+  @artist.save()
+  redirect to '/artists'
+  end
 
 # delete artists

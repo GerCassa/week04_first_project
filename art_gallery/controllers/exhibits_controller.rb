@@ -15,6 +15,7 @@ end
 # add new exhibits
 #NEW
 get '/exhibits/new' do
+  @artists = Artist.all()
   erb(:"exhibits/new")
 end
 #Save

@@ -12,11 +12,14 @@
   <label for="style">Style</label>
     <input id="style" type="text" name="style"/>
 
-  <label for="artist_id">Select an Artist</label>
-    <select id="artist-select" name="Artist">
-      <option value="Miró">Joan Miró</option>
-      <option value="Dali">Salvador Dali</option>
+  <label>
+    Select an Artist:
+    <select name="artist_id">
+      <% for artist in @artists %>
+      <option value="<%=artist.id%>"><%= artist.full_name%></option>
+      <%end%>
     </select>
+  </label>
 
   <input type='submit' value="Save Exhibit"/>
 </form>
