@@ -43,5 +43,63 @@ class Exhibit
     SqlRunner.run[sql, values]
   end
 
+  def delete()
+    sql = "DELETE FROM exhibits WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM exhibits"
+    SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM exhibits"
+    exhibits = SqlRunner.run(sql)
+    result = exhibits.map {|exhibit| Exhibit.new(exhibit)}
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM exhibits WHERE id = $1"
+    values = [id]
+    exhibit = SqlRunner.run(sql, values)
+    result = Exhibit.new(exhibit.first)
+    return result
+  end
+
+  def self.find_name(name)
+    sql = "SELECT * FROM exhibits WHERE name = $1"
+    values = [name]
+    exhibit = SqlRunner.run(sql, values)
+    result = Exhibit.new(exhibit.first)
+    return result
+  end
+
+  def self.find_by_year(date_created)
+    sql = "SELECT * FROM exhibits WHERE date_created = $1"
+    values = [date_created]
+    exhibit = SqlRunner.run(sql, values)
+    result = Exhibit.new(exhibit.first)
+    return result
+  end
+
+  def self.find_by_artist(artist_id)
+    sql = "SELECT * FROM exhibits WHERE artist_id = $1"
+    values = [artist_id]
+    exhibit = SqlRunner.run(sql, values)
+    result = Exhibit.new(exhibit.first)
+    return result
+  end
+
+  def self.find_by_style(style)
+    sql = "SELECT * FROM exhibits WHERE style = $1"
+    values = [style]
+    exhibit = SqlRunner.run(sql, values)
+    result = Exhibit.new(exhibit.first)
+    return result
+  end
+
 
 end
