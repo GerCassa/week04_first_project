@@ -19,5 +19,12 @@ class TestExhibit < MiniTest::Test
     assert_equal("Nu au miroir", result)
   end
 
+  def test_exhibit_date
+    result = @exhibit.date_created()
+    assert_equal("1919", result)
+  end
 
-end 
+
+
+
+end

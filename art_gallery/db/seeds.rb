@@ -1,5 +1,7 @@
 require_relative( "../models/gallery.rb" )
 require_relative( "../models/artist.rb" )
+require_relative("../models/exhibit.rb")
+
 require("pry-byebug")
 
 
@@ -19,6 +21,16 @@ artist1 = Artist.new({
 })
 
 artist1.save()
+
+exhibit1 = Exhibit.new({
+  "name" => "Nu au miroir",
+  "date_created" => "1919",
+  "format" => "oil on canvas",
+  "style" => "Surrealism",
+  "artist_id" => artist1.id
+})
+
+exhibit1.save()
 
 
 binding.pry
