@@ -24,8 +24,8 @@ artist1.save()
 
 exhibit1 = Exhibit.new({
   "name" => "Nu au miroir",
-  "date_created" => "1919",
-  "format" => "oil on canvas",
+  "year" => "1919",
+  "medium" => "oil on canvas",
   "style" => "Surrealism",
   "artist_id" => artist1.id
 })

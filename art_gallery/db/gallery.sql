@@ -21,8 +21,8 @@ CREATE TABLE artists(
 CREATE TABLE exhibits(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
-  date_created VARCHAR(255),
-  format VARCHAR(255),
+  year VARCHAR(255),
+  medium VARCHAR(255),
   style VARCHAR(255),
   artist_id INT8 references artists(id)
 );

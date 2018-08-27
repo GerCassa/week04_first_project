@@ -3,13 +3,13 @@ require_relative('../db/sql_runner')
 class Exhibit
 
   attr_reader :id
-  attr_accessor :name, :date_created, :format, :style, :artist_id
+  attr_accessor :name, :year, :medium, :style, :artist_id
 
   def initialize(info)
     @id = info["id"].to_i
     @name = info["name"]
-    @date_created = info["date_created"]
-    @format = info["format"]
+    @year = info["year"]
+    @medium = info["medium"]
     @style = info["style"]
     @artist_id = info["artist_id"].to_i
   end
@@ -17,14 +17,14 @@ class Exhibit
   def save()
     sql = "INSERT INTO exhibits
     ( name,
-      date_created,
-      format,
+      year,
+      medium,
       style,
       artist_id )
     VALUES
     ( $1, $2, $3, $4, $5)
     RETURNING *"
-    values = [@name, @date_created,@format, @style, @artist_id]
+    values = [@name, @year, @medium, @style, @artist_id]
     exhibit_info = SqlRunner.run(sql, values)
     @id = exhibit_info.first()["id"].to_i
   end
@@ -32,14 +32,14 @@ class Exhibit
   def update()
     sql = "UPDATE artist SET
     ( name,
-      date_created,
-      format,
+      year,
+      medium,
       style,
       artist_id )
       =
       ($1, $2, $3, $4, $5 )
       WHERE id = $6"
-    values = [@name, @date_created,@format, @style, @artist_id, @id]
+    values = [@name, @year, @medium, @style, @artist_id, @id]
     SqlRunner.run[sql, values]
   end
 
@@ -77,9 +77,9 @@ class Exhibit
     return result
   end
 
-  def self.find_by_year(date_created)
-    sql = "SELECT * FROM exhibits WHERE date_created = $1"
-    values = [date_created]
+  def self.find_by_year(year)
+    sql = "SELECT * FROM exhibits WHERE year = $1"
+    values = [year]
     exhibit = SqlRunner.run(sql, values)
     result = Exhibit.new(exhibit.first)
     return result
