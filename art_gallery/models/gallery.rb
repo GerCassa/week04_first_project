@@ -2,7 +2,8 @@ require_relative("../db/sql_runner")
 
 class Gallery
 
-  attr_reader :id, :name
+  attr_reader :id
+  attr_accessor :name
 
   def initialize(info)
     @id = info["id"].to_i
