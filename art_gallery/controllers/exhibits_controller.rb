@@ -12,6 +12,7 @@ get '/exhibits' do
   @exhibits = Exhibit.all()
   erb(:"exhibits/index")
 end
+
 # add new exhibits
 #NEW
 get '/exhibits/new' do
