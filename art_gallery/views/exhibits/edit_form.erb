@@ -1,0 +1,28 @@
+<a href="/">Home</a>
+<h3>Edit Exhibit:</h3>
+
+<form method="post" action="/exhibits/<%=@exhibit.id%>/edit">
+
+  <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value="<%=@exhibit.name%>" />
+
+  <label for="year">Year:</label>
+    <input id="year" type="number" name="year" value="<%=@exhibit.year%>" />
+
+  <label for="medium">Medium:</label>
+    <input id="medium" type="text" name="medium" value="<%=@exhibit.medium%>" />
+
+  <label for="style">Style:</label>
+    <input id="style" type="text" name="style" value="<%=@exhibit.style%>"/>
+
+  <label>
+    Select an Artist:
+    <select name="artist_id">
+      <% for artist in @artists %>
+      <option value="<%=artist.id%>"><%= artist.full_name%></option>
+      <%end%>
+    </select>
+  </label>
+
+  <input type="submit" value="Edit Exhibit" />
+</form>

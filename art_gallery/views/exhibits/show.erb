@@ -1,0 +1,32 @@
+<a href="/">Home</a>
+<a href="/exhibits">Exhibits</a>
+<h3>Exhibit:</h3>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th></th>
+    <th>Name</th>
+    <th></th>
+    <th>Year</th>
+    <th></th>
+    <th>Medium</th>
+    <th></th>
+    <th>Style</th>
+    <th></th>
+    <th>Artist</th>
+  </tr>
+  <tr>
+    <td><%=@exhibit.id%></td>
+    <td>|</td>
+    <td><%=@exhibit.name()%></td>
+    <td>|</td>
+    <td><%=@exhibit.year()%></td>
+    <td>|</td>
+    <td><%=@exhibit.medium%></td>
+    <td>|</td>
+    <td><%=@exhibit.style()%></td>
+    <td>|</td>
+    <td><%=@exhibit.artist_id()%></td>
+  </tr>
+</table>

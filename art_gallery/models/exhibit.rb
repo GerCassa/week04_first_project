@@ -30,7 +30,7 @@ class Exhibit
   end
 
   def update()
-    sql = "UPDATE artist SET
+    sql = "UPDATE exhibits SET
     ( name,
       year,
       medium,
@@ -40,7 +40,7 @@ class Exhibit
       ($1, $2, $3, $4, $5 )
       WHERE id = $6"
     values = [@name, @year, @medium, @style, @artist_id, @id]
-    SqlRunner.run[sql, values]
+    SqlRunner.run(sql, values)
   end
 
   def delete()

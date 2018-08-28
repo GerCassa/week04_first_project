@@ -27,9 +27,32 @@ post '/exhibits' do
 end
 
 # edit existing exhibits
+get '/exhibits/edit' do
+  @exhibits = Exhibit.all
+  @artists = Artist.all()
+  erb(:"exhibits/edit")
+end
 
+get '/exhibits/:id/edit' do
+  @artists = Artist.all()
+  @exhibit = Exhibit.find(params[:id])
+  erb(:"exhibits/edit_form")
+end
+
+post '/exhibits/:id/edit' do
+  @artists = Artist.all()
+  exhibit = Exhibit.new(params)
+  exhibit.update
+  redirect to "/exhibits"
+end
 
 # delete exhibits
 
 
 # assign an exhibit to an artist
+
+# show
+get '/exhibits/:id' do
+  @exhibit = Exhibit.find(params["id"])
+  erb(:"/exhibits/show")
+end
