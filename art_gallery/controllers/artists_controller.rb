@@ -36,6 +36,11 @@ get '/artists/:id/delete' do
   redirect to '/artists'
 end
 
+post '/artists/:id/delete' do
+  Artist.destroy(params[:id])
+  redirect to "/artists/delete"
+end
+
 # EDIT
 get '/artists/edit' do
   @artists = Artist.all
