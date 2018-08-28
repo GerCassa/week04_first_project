@@ -1,0 +1,10 @@
+<a href="/">Home</a>
+<h3>Select artist to DELETE:</h3>
+
+    <% for artist in @artists %>
+    <ul>
+        <li><a href="/artists/<%= artist.id %>/delete"><%= artist.full_name%> </a></li>
+      </ul>
+
+
+    <%end%>

@@ -1,7 +1,7 @@
 <a href="/">Home</a>
 <h3>Edit Artist:</h3>
 
-<form method="post" action="/artists/edit">
+<form method="post" action="/artists/<%=@artist.id%>/edit">
 
   <label for="first_name">First Name:</label>
     <input id="first_name" type="text" name="first_name" value="<%=@artist.first_name%>" />
@@ -14,6 +14,9 @@
 
   <label for="bio">Bio:</label>
     <textarea id="bio" name="bio" rows="4" cols="25"><%=@artist.bio%></textarea>
+
+  <label for="gallery_id">Gallery:</label>
+    <input id="gallery_id" type="number" name="gallery_id" value="<%=@artist.gallery_id%>"/>
 
   <input type="submit" value="Edit Artist" />
 </form>

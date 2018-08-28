@@ -1,0 +1,23 @@
+<a href="/">Home</a>
+<a href="/artists">Artists</a>
+<h3>Artist:</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Style</th>
+    <th></th>
+    <th>Bio</th>
+    <th></th>
+    <th>Gallery</th>
+  </tr>
+  <tr>
+    <td><%=@artist.full_name()%></td>
+    <td>|</td>
+    <td><%=@artist.style()%></td>
+    <td>|</td>
+    <td><%=@artist.bio%></td>
+    <td><%=@artist.gallery_id%></td>
+  </tr>
+</table>
