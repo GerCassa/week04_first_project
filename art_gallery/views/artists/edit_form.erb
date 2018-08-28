@@ -1,0 +1,19 @@
+<a href="/">Home</a>
+<h3>Edit Artist:</h3>
+
+<form method="post" action="/artists/edit">
+
+  <label for="first_name">First Name:</label>
+    <input id="first_name" type="text" name="first_name" value="<%=@artist.first_name%>" />
+
+  <label for="last_name">Last Name:</label>
+    <input id="last_name" type="text" name="last_name" value="<%=@artist.last_name%>" />
+
+  <label for="style">Style:</label>
+    <input id="style" type="text" name="style" value="<%=@artist.style%>"/>
+
+  <label for="bio">Bio:</label>
+    <textarea id="bio" name="bio" rows="4" cols="25"><%=@artist.bio%></textarea>
+
+  <input type="submit" value="Edit Artist" />
+</form>

@@ -25,3 +25,23 @@ post '/artists' do
   end
 
 # delete artists
+post '/artists/:id/delete' do
+  Artist.destroy(params[:id])
+  redirect to("/artists")
+end
+
+# EDIT
+get '/artists/edit' do
+  @artists = Artist.all
+  erb(:"artists/edit")
+end
+
+get '/artists/:id/edit' do
+  @artist = Artist.find(params[:id])
+  erb(:"artists/edit_form")
+end
+
+# get '/artists/:id' do
+#   @artist = Artist.find(params["id"])
+#   erb(:show)
+# end

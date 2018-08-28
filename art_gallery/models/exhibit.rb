@@ -49,6 +49,12 @@ class Exhibit
     SqlRunner.run(sql, values)
   end
 
+  def self.destroy(id)
+    sql = "DELETE FROM exhibit WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM exhibits"
     SqlRunner.run(sql)

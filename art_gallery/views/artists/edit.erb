@@ -1,0 +1,6 @@
+<a href="/">Home</a>
+<h3>Select artist to EDIT:</h3>
+
+    <% for artist in @artists %>
+        <a href="/artists/<%= artist.id %>/edit"><%= artist.full_name%> </a>
+    <%end%>
