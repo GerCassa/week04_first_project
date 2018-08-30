@@ -1,12 +1,21 @@
 
 <h3>Select artist to DELETE:</h3>
 
-  <% for artist in @artists %>
-    <ul>
-      <li><%= artist.full_name%></li>
-    </ul>
+  <table id="artist-edit-table">
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+    <% for artist in @artists %>
+    <tr>
+      <td>
+        <a href="/artists/<%= artist.id %>/edit"><%= artist.full_name%></a>
+      </td>
 
-    <form method="post" action="/artists/<%= artist.id %>/delete">
-      <input type="submit" value="Delete!">
-    </form>
-  <%end%>
+      <td>
+      <form method="post" action="/artists/<%= artist.id %>/delete">
+      <input id="delete-button" type="submit" value="Delete!">
+      </form>
+      </td>
+    <%end%>
+  </table>

@@ -26,7 +26,7 @@
   </tr>
     <tr>
       <%@artist.exhibit.each do |exhibit|%>
-        <td><%=exhibit.name%></td>
+        <td><a href="/exhibits/<%=exhibit.id%>"><%=exhibit.name%></a></td>
         <td><a href="<%=exhibit.image%>"><img src="<%=exhibit.image%>" height="100" width="150"></a></td>
     </tr>
     <%end%>

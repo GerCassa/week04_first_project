@@ -2,12 +2,26 @@
 
 <h3>Select exhibit to DELETE:</h3>
 
-  <% for exhibit in @exhibits %>
-    <ul>
-      <li><%= exhibit.name%></li>
-    </ul>
+  <table id="artist-work">
+    <tr>
+      <th> Name </th>
+      <th> Image </th>
+      <th> Action </th>
+    </tr>
+    <% for exhibit in @exhibits %>
+    <tr>
 
-    <form method="post" action="/exhibits/<%= exhibit.id %>/delete">
-      <input type="submit" value="Delete!">
-    </form>
+      <td><a href="/exhibits/<%= exhibit.id %>/edit"><%= exhibit.name%> </a>
+      </td>
+
+      <td><a href="<%=exhibit.image%>"><img src="<%=exhibit.image%>" height="100" width="150"></a>
+      </td>
+
+      <td><form method="post" action="/exhibits/<%= exhibit.id %>/delete">
+      <input id="delete-button" type="submit" value="Delete!">
+      </form>
+      </td>
+
+    </tr>
   <%end%>
+</table>

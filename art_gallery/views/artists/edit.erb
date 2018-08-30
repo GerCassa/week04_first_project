@@ -1,8 +1,22 @@
 
 <h3>Select artist to EDIT:</h3>
 
+
+  <table id="artist-edit-table">
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
     <% for artist in @artists %>
-      <ul class="edit-artist">
-        <li><a href="/artists/<%= artist.id %>/edit"><%= artist.full_name%> </a></li>
-      </ul>
+    <tr>
+      <td>
+        <a href="/artists/<%= artist.id %>/edit"><%= artist.full_name%></a>
+      </td>
+
+      <td>
+      <form method="get" action="/artists/<%= artist.id %>/edit">
+      <input id="edit-button" type="submit" value="Edit">
+      </form>
+      </td>
     <%end%>
+  </table>

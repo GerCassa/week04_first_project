@@ -1,0 +1,31 @@
+form {
+  width: 80%;
+  margin-left: 10%;
+}
+
+label, input, textarea, #dropdown {
+  display: inline-block;
+}
+
+label {
+  width: 30%;
+  text-align: right;
+}
+
+label + input {
+  width: 30%;
+  margin: 0 30% 0 4%;
+}
+label + textarea {
+  width: 30%;
+  margin: 0 30% 0 4%;
+}
+
+input + input {
+  text-align: center;
+}
+
+label + #dropdown {
+  width: 30%;
+  margin: 0 30% 0 4%;
+}

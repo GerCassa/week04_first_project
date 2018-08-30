@@ -14,17 +14,16 @@
   <label for="style">Style</label>
     <input id="style" type="text" name="style"/>
 
-  <label>
-    Select an Artist:
-    <select name="artist_id">
+  <label for="image">Image</label>
+    <input id="image" type="text" name="image"/>
+
+  <label> Select an Artist:  </label>
+    <select id="dropdown" name="artist_id">
       <% for artist in @artists %>
       <option value="<%=artist.id%>"><%= artist.full_name%></option>
       <%end%>
     </select>
-  </label>
 
-  <label for="image">Image</label>
-    <input id="image" type="text" name="image"/>  
 
   <input type='submit' value="Save Exhibit"/>
 </form>

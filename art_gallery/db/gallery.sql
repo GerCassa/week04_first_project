@@ -25,5 +25,5 @@ CREATE TABLE exhibits(
   medium VARCHAR(255),
   style VARCHAR(255),
   image VARCHAR(255),
-  artist_id INT8 references artists(id)
+  artist_id INT8 references artists(id) ON DELETE CASCADE
 );

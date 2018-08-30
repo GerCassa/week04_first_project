@@ -4,7 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Style</th>
-    <th>Bio</th>
   </tr>
   <% @artists.each do |artist| %>
 
@@ -12,7 +11,6 @@
     <td><a href="/artists/<%=artist.id%>">
     <%=artist.full_name()%></a></td>
     <td><%=artist.style()%></td>
-    <td><%=artist.bio%></td>
   </tr>
 
   <% end %>

@@ -12,13 +12,15 @@
   color: black;
 }
 
-.links {
-  background-color: white;
-  float: right;
+#delete-button {
+  width: 50px;
 }
 
-.home {
-  color: black;
+#edit-button {
+  width: 50px;
+}
+
+.links {
   background-color: white;
   float: right;
 }

@@ -4,8 +4,6 @@
 <table id="exhibits_table">
   <tr>
     <th>Name</th>
-    <th>Style</th>
-    <th>Year</th>
     <th>Artist</th>
     <th>Image</th>
   </tr>
@@ -13,9 +11,7 @@
   <tr>
   <td><a href="/exhibits/<%=exhibit.id%>">
   <%=exhibit.name%></a></td>
-  <td><%=exhibit.style%></td>
-  <td><%=exhibit.year%></td>
-  <td><%exhibit.artists.each do |artist|%> <%=artist.full_name()%> <%end%></td>
+  <td><%exhibit.artists.each do |artist|%><a href="/artists/<%=artist.id%>"> <%=artist.full_name()%></a> <%end%></td>
   <td><a href="<%=exhibit.image%>"><img src="<%=exhibit.image%>" height="100" width="150"></a></td>
   <%end%>
   </tr>
