@@ -1,5 +1,5 @@
 body {
-    background: seagreen url('/images/Van_Gogh_-_Starry_Night.jpg');
+    background: seagreen url('/images/Sunrise - Monet.jpg');
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,13 +63,7 @@ h1 {
   margin: 0;
 }
 
-#artists {
-  margin: 100px;
-}
 
-#exhibits{
-  margin: 100px;
-}
 .topnav > header {
   position: static;
   grid-area: head;
@@ -83,9 +77,10 @@ h1 {
 }
 
 .wrapper > main {
-  margin-top: 50px;
+  margin-top: 70px;
   text-align: center;
   grid-area: main;
+  overflow: scroll;
 }
 
 
@@ -95,14 +90,4 @@ h1 {
   text-align: center;
   grid-area: foot;
   background-color: white;
-}
-
-#manager_nav {
-  display: flex;
-  justify-content: space-around;
-}
-
-#manager_nav li {
-  list-style: none;
-  border: 1px solid white;
 }

@@ -1,8 +1,15 @@
 
 <h3>Select exhibit to EDIT:</h3>
 
+  <table id="artist-work">
+    <tr>
+      <th> Name </th>
+      <th> Image </th>
+    </tr>
     <% for exhibit in @exhibits %>
-      <ul>
-        <li><a href="/exhibits/<%= exhibit.id %>/edit"><%= exhibit.name%> </a></li>
-      </ul>
-    <%end%>
+    <tr>
+      <td><a href="/exhibits/<%= exhibit.id %>/edit"><%= exhibit.name%> </a></td>
+      <td><a href="<%=exhibit.image%>"><img src="<%=exhibit.image%>" height="100" width="150"></a></td>
+    </tr>
+      <%end%>
+  </table>

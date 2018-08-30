@@ -18,6 +18,14 @@ class Artist
   return "#{@first_name} #{@last_name}"
   end
 
+  def exhibit()
+    sql = "SELECT * FROM exhibits WHERE artist_id = $1"
+    values = [@id]
+    exhibits = SqlRunner.run(sql, values)
+    result = exhibits.map {|exhibit| Exhibit.new(exhibit)}
+    return result
+  end
+
   def save()
     sql = "INSERT INTO artists
     ( first_name,
@@ -47,11 +55,7 @@ class Artist
     SqlRunner.run(sql, values)
   end
 
-  # def delete()
-  #   sql = "DELETE FROM artists WHERE id = $1"
-  #   values = [@id]
-  #   SqlRunner.run(sql, values)
-  # end
+
 
   def self.destroy(id)
     sql = "DELETE FROM artists WHERE id = $1"

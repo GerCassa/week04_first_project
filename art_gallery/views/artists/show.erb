@@ -2,27 +2,32 @@
 
 <h3>Artist:</h3>
 
-<table>
+<table id="artist_table">
   <tr>
     <th>ID</th>
-    <th></th>
     <th>Name</th>
-    <th></th>
     <th>Style</th>
-    <th></th>
     <th>Bio</th>
-    <th></th>
     <th>Gallery</th>
   </tr>
   <tr>
     <td><%=@artist.id%></td>
-    <td>|</td>
     <td><%=@artist.full_name()%></td>
-    <td>|</td>
     <td><%=@artist.style()%></td>
-    <td>|</td>
     <td><%=@artist.bio%></td>
-    <td>|</td>
     <td><%=@artist.gallery_id%></td>
   </tr>
+</table>
+
+<table id="artist-work">
+  <tr>
+    <th> Name </th>
+    <th> Image </th>
+  </tr>
+    <tr>
+      <%@artist.exhibit.each do |exhibit|%>
+        <td><%=exhibit.name%></td>
+        <td><a href="<%=exhibit.image%>"><img src="<%=exhibit.image%>" height="100" width="150"></a></td>
+    </tr>
+    <%end%>
 </table>

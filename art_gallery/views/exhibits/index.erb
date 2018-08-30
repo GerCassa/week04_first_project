@@ -4,23 +4,19 @@
 <table id="exhibits_table">
   <tr>
     <th>Name</th>
-    <th></th>
     <th>Style</th>
-    <th></th>
     <th>Year</th>
-    <th></th>
     <th>Artist</th>
+    <th>Image</th>
   </tr>
   <% @exhibits.each do |exhibit| %>
   <tr>
-    <td><a href="/exhibits/<%=exhibit.id%>">
+  <td><a href="/exhibits/<%=exhibit.id%>">
   <%=exhibit.name%></a></td>
-  <td>|</td>
   <td><%=exhibit.style%></td>
-  <td>|</td>
   <td><%=exhibit.year%></td>
-  <td>|</td>
   <td><%exhibit.artists.each do |artist|%> <%=artist.full_name()%> <%end%></td>
-  </tr>
+  <td><a href="<%=exhibit.image%>"><img src="<%=exhibit.image%>" height="100" width="150"></a></td>
   <%end%>
+  </tr>
 </table>

@@ -1,15 +1,30 @@
 #exhibit_table {
-  margin-left: 50vh;
+  margin-left: 25%;
+  margin-right: 25%;
   border-collapse: separate;
 }
 
 #exhibits_table {
-  margin-left: 55vh;
+  margin-left: 25%;
+  margin-right: 25%;
   border-collapse: separate;
 }
 
+#artist_table {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
 #artists_table {
-  margin-left: 2vh;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 100vh;
+  border: 2px solid white;
+}
+
+#artist-work {
+  margin-left: 35%;
+  margin-right: 35%;
 }
 
 th {
@@ -18,9 +33,36 @@ th {
 }
 
 td {
+  padding: 1vh;
+  border: 1px solid papayawhip;
   color: papayawhip;
+
 }
 
 td, th {
   text-align: center;
+}
+
+#manager_nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+#manager_nav li {
+  background-color: grey;
+  list-style: none;
+  border: 5px ridge white;
+  border-radius: 5px;
+  margin: 2px;
+  font-weight: bold;
+
+
+}
+
+.artists_manager {
+  margin-right: 25%;
+}
+
+.exhibits_manager {
+  margin-left: 20%;
 }
