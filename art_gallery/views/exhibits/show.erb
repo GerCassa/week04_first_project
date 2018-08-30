@@ -1,8 +1,7 @@
-<a href="/">Home</a>
-<a href="/exhibits">Exhibits</a>
+
 <h3>Exhibit:</h3>
 
-<table>
+<table id="exhibit_table">
   <tr>
     <th>ID</th>
     <th></th>
@@ -15,6 +14,8 @@
     <th>Style</th>
     <th></th>
     <th>Artist</th>
+    <th></th>
+    <th>Image</th>
   </tr>
   <tr>
     <td><%=@exhibit.id%></td>
@@ -27,6 +28,10 @@
     <td>|</td>
     <td><%=@exhibit.style()%></td>
     <td>|</td>
-    <td><%=@exhibit.artist_id()%></td>
+    <%@exhibit.artists.each do |artist|%>
+    <td><%= artist.full_name() %></td>
+    <%end%>
+    <td>|</td>
+    <td><a href="<%=@exhibit.image%>"><img src="<%=@exhibit.image%>" height="100" width="100"></a></td>
   </tr>
 </table>

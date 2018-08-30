@@ -14,9 +14,3 @@ end
 get '/manager' do
   erb(:"managers/home")
 end
-
-
-#Visitor Section
-get '/visitor' do
-  erb(:"visitors/home")
-end

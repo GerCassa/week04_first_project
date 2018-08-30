@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Exhibit
 
   attr_reader :id
-  attr_accessor :name, :year, :medium, :style, :artist_id
+  attr_accessor :name, :year, :medium, :style, :artist_id, :image
 
   def initialize(info)
     @id = info["id"].to_i
@@ -11,6 +11,7 @@ class Exhibit
     @year = info["year"]
     @medium = info["medium"]
     @style = info["style"]
+    @image = info["image"]
     @artist_id = info["artist_id"].to_i
   end
 
@@ -20,11 +21,12 @@ class Exhibit
       year,
       medium,
       style,
-      artist_id )
+      image,
+      artist_id)
     VALUES
-    ( $1, $2, $3, $4, $5)
+    ( $1, $2, $3, $4, $5, $6)
     RETURNING *"
-    values = [@name, @year, @medium, @style, @artist_id]
+    values = [@name, @year, @medium, @style, @image, @artist_id]
     exhibit_info = SqlRunner.run(sql, values)
     @id = exhibit_info.first()["id"].to_i
   end
@@ -35,12 +37,20 @@ class Exhibit
       year,
       medium,
       style,
-      artist_id )
+      image,
+      artist_id)
       =
-      ($1, $2, $3, $4, $5 )
-      WHERE id = $6"
-    values = [@name, @year, @medium, @style, @artist_id, @id]
+      ($1, $2, $3, $4, $5, $6 )
+      WHERE id = $7"
+    values = [@name, @year, @medium, @style, @image, @artist_id, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def artists()
+    sql = "SELECT a.* FROM artists a INNER JOIN exhibits ON exhibits.artist_id = a.id WHERE exhibits.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map {|artist| Artist.new(artist)}
   end
 
   def delete()
@@ -50,7 +60,7 @@ class Exhibit
   end
 
   def self.destroy(id)
-    sql = "DELETE FROM exhibit WHERE id = $1"
+    sql = "DELETE FROM exhibits WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
   end

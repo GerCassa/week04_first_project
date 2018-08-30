@@ -27,6 +27,7 @@ exhibit1 = Exhibit.new({
   "year" => "1919",
   "medium" => "oil on canvas",
   "style" => "Surrealism",
+  "image" => "/images/Nu_au_miroir.jpg",
   "artist_id" => artist1.id
 })
 

@@ -1,0 +1,26 @@
+#exhibit_table {
+  margin-left: 50vh;
+  border-collapse: separate;
+}
+
+#exhibits_table {
+  margin-left: 55vh;
+  border-collapse: separate;
+}
+
+#artists_table {
+  margin-left: 2vh;
+}
+
+th {
+  border: 1px solid papayawhip;
+  background-color: white;
+}
+
+td {
+  color: papayawhip;
+}
+
+td, th {
+  text-align: center;
+}

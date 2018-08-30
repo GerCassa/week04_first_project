@@ -1,0 +1,108 @@
+body {
+    background: seagreen url('/images/Van_Gogh_-_Starry_Night.jpg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+  color: black;
+}
+
+#vgarts {
+  text-align: center;
+  color: steelblue;
+  font-size: 50px;
+  grid-area: head;
+  margin: 0px;
+  margin-left: 130px;
+}
+
+a {
+  color: white;
+}
+a:hover {
+  color: tomato;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.wrapper {
+  display: grid;
+  width: 100%;
+  height: 98vh;
+  grid-template-areas:
+  "head head"
+  "main main"
+  "foot foot";
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr;
+    margin-top: 0;
+}
+.links {
+  background-color: white;
+  float: right;
+}
+
+.home {
+  color: black;
+  background-color: white;
+  float: right;
+}
+
+.wrapper > header {
+  text-align: center;
+  grid-area: head;
+  background-color: white;
+  margin: 0;
+}
+
+#artists {
+  margin: 100px;
+}
+
+#exhibits{
+  margin: 100px;
+}
+.topnav > header {
+  position: static;
+  grid-area: head;
+}
+
+
+.wrapper > nav {
+  text-align: center;
+  grid-area: nav;
+  background-color: white;
+}
+
+.wrapper > main {
+  margin-top: 50px;
+  text-align: center;
+  grid-area: main;
+}
+
+
+.wrapper >footer {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  grid-area: foot;
+  background-color: white;
+}
+
+#manager_nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+#manager_nav li {
+  list-style: none;
+  border: 1px solid white;
+}

@@ -1,7 +1,7 @@
-<a href="/">Home</a>
-<h1>Exhibits</h1>
 
-<table>
+<h1>All Exhibits</h1>
+
+<table id="exhibits_table">
   <tr>
     <th>Name</th>
     <th></th>
@@ -20,7 +20,7 @@
   <td>|</td>
   <td><%=exhibit.year%></td>
   <td>|</td>
-  <td><%=exhibit.artist_id%></td>
+  <td><%exhibit.artists.each do |artist|%> <%=artist.full_name()%> <%end%></td>
   </tr>
   <%end%>
 </table>

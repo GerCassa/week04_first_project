@@ -1,0 +1,13 @@
+
+
+<h3>Select exhibit to DELETE:</h3>
+
+  <% for exhibit in @exhibits %>
+    <ul>
+      <li><%= exhibit.name%></li>
+    </ul>
+
+    <form method="post" action="/exhibits/<%= exhibit.id %>/delete">
+      <input type="submit" value="Delete!">
+    </form>
+  <%end%>
