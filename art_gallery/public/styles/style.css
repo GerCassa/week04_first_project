@@ -8,10 +8,6 @@ body {
     padding: 0;
 }
 
-#home {
-  color: black;
-}
-
 #vgarts {
   text-align: center;
   color: steelblue;
@@ -19,17 +15,6 @@ body {
   grid-area: head;
   margin: 0px;
   margin-left: 130px;
-}
-
-a {
-  color: white;
-}
-a:hover {
-  color: tomato;
-}
-
-h1 {
-  text-align: center;
 }
 
 
@@ -44,16 +29,6 @@ h1 {
     grid-template-rows: 50px 1fr 30px;
     grid-template-columns: 150px 1fr;
     margin-top: 0;
-}
-.links {
-  background-color: white;
-  float: right;
-}
-
-.home {
-  color: black;
-  background-color: white;
-  float: right;
 }
 
 .wrapper > header {

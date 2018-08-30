@@ -2,7 +2,7 @@
 <h3>Select artist to EDIT:</h3>
 
     <% for artist in @artists %>
-      <ul>
+      <ul class="edit-artist">
         <li><a href="/artists/<%= artist.id %>/edit"><%= artist.full_name%> </a></li>
       </ul>
     <%end%>
